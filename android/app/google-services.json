@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "320233292561",
+    "firebase_url": "https://simple-firebase-crud-9fb2c-default-rtdb.firebaseio.com",
+    "project_id": "simple-firebase-crud-9fb2c",
+    "storage_bucket": "simple-firebase-crud-9fb2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320233292561:android:3b37573db7be4a4d1282b0",
+        "android_client_info": {
+          "package_name": "com.example.simple_firebase_crud_cubit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320233292561-7likfuso51u7q94330tq0b5re9rgbt39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZHQP_WT3zD1oytGNYSkpXdIghg9S6PXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320233292561-7likfuso51u7q94330tq0b5re9rgbt39.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "320233292561-n4r0t490u7vqnnu1lvf6t0cm70b91fth.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kdfsdfl.342k-4323243324"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320233292561:android:1b7d6238c88a813c1282b0",
+        "android_client_info": {
+          "package_name": "ds23.fd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320233292561-7likfuso51u7q94330tq0b5re9rgbt39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZHQP_WT3zD1oytGNYSkpXdIghg9S6PXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320233292561-7likfuso51u7q94330tq0b5re9rgbt39.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "320233292561-n4r0t490u7vqnnu1lvf6t0cm70b91fth.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kdfsdfl.342k-4323243324"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
