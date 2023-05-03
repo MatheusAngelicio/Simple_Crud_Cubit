@@ -1,14 +1,15 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:page_indicator/page_indicator.dart';
 
-final googleClientId = Platform.isIOS
-    ? '320233292561-n4r0t490u7vqnnu1lvf6t0cm70b91fth.apps.googleusercontent.com'
-    : '320233292561-1pdjllql3uc59t3i4fg08psu6ri579qv.apps.googleusercontent.com';
+final googleClientId = kIsWeb || Platform.isAndroid
+    ? '320233292561-1pdjllql3uc59t3i4fg08psu6ri579qv.apps.googleusercontent.com'
+    : '320233292561-n4r0t490u7vqnnu1lvf6t0cm70b91fth.apps.googleusercontent.com';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
