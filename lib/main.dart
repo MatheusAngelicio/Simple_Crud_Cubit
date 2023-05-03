@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:simple_firebase_crud_cubit/firebase_options.dart';
 import 'package:simple_firebase_crud_cubit/src/app.dart';
+import 'package:simple_firebase_crud_cubit/src/cubits/auth_cubit.dart';
 import 'package:simple_firebase_crud_cubit/src/repository/auth_repository.dart';
 import 'package:simple_firebase_crud_cubit/src/repository/implementation/auth_repository_impl.dart';
 
@@ -16,7 +18,13 @@ void main() async {
   );
 
   await injectDependencies();
-  runApp(const MyApp());
+
+  runApp(
+    BlocProvider(
+      create: (_) => AuthCubit()..init(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 Future<void> injectDependencies() async {

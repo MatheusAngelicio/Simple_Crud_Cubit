@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_firebase_crud_cubit/src/cubits/auth_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,6 +18,11 @@ class HomeScreen extends StatelessWidget {
               "Home Screen...",
               style: TextStyle(fontSize: 24),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  context.read<AuthCubit>().signOut();
+                },
+                child: Text('Sign Out'))
           ],
         ),
       ),
