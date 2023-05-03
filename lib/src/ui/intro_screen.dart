@@ -1,8 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:page_indicator/page_indicator.dart';
+
+final googleClientId = Platform.isIOS
+    ? '320233292561-n4r0t490u7vqnnu1lvf6t0cm70b91fth.apps.googleusercontent.com'
+    : '320233292561-1pdjllql3uc59t3i4fg08psu6ri579qv.apps.googleusercontent.com';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -11,7 +17,7 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome'),
+        title: const Text('Welcome'),
       ),
       body: _IntroPager(),
     );
@@ -72,7 +78,8 @@ class _DescriptionPage extends StatelessWidget {
             child: Text(
               text,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+              style:
+                  const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
             ),
           ))
         ],
@@ -84,11 +91,11 @@ class _DescriptionPage extends StatelessWidget {
 class _LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const SignInScreen(
+    return SignInScreen(
       providerConfigs: [
-        GoogleProviderConfiguration(clientId: ''),
-        FacebookProviderConfiguration(clientId: ''),
-        EmailProviderConfiguration(),
+        GoogleProviderConfiguration(clientId: googleClientId),
+        const FacebookProviderConfiguration(clientId: ''),
+        const EmailProviderConfiguration(),
       ],
     );
   }
