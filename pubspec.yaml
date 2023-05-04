@@ -24,7 +24,7 @@ dependencies:
   page_indicator: ^0.4.1
   get_it: ^7.3.0
   google_sign_in: ^5.4.2
-  flutter_facebook_auth: ^5.0.8
+  equatable: ^2.0.5
 
 
 
