@@ -1,6 +1,8 @@
 import 'dart:ffi';
 
-class User {
+import 'package:equatable/equatable.dart';
+
+class MyUser extends Equatable {
   final String id;
   final String name;
   final String lastName;
@@ -8,7 +10,7 @@ class User {
 
   final String? image;
 
-  const User(
+  const MyUser(
       {required this.id,
       required this.name,
       required this.lastName,
@@ -25,7 +27,16 @@ class User {
     };
   }
 
-  User.fromFirebaseMap(Map<String, Object?> data)
+  // Equatable > compara os objetos, compara se todas as propriedades sao iguais,
+  // nao importa que estejam em diferentes endereços de memória
+  // OU SEJA
+  // se TODAS as propriedades sao iguais, os objetos comparados sao iguais, retorna true
+
+  //SE NAO USAR O Equatable, ira ser verificado se os msm estao no msm local de memoria, e ira retornar false a comparacao
+  @override
+  List<Object?> get props => [id, name, lastName, age, image];
+
+  MyUser.fromFirebaseMap(Map<String, Object?> data)
       : id = data['id'] as String,
         name = data['name'] as String,
         lastName = data['lastName'] as String,
@@ -37,14 +48,14 @@ class User {
   // e a funcao verifica , se for nulo(se nao quero mudar tal propriedade),
   // entao continua o msm valor de antes, se eu passar algum valor, ai sera modificado
 
-  User copyWith({
+  MyUser copyWith({
     String? id,
     String? name,
     String? lastName,
     int? age,
     String? image,
   }) {
-    return User(
+    return MyUser(
       id: id ?? this.id,
       name: name ?? this.name,
       lastName: lastName ?? this.lastName,
