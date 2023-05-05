@@ -52,4 +52,15 @@ class FirebaseDataSource {
     // Agora sim salvo meu usuario no firestore
     await ref.set(myUser.toFirebaseMap(), SetOptions(merge: true));
   }
+
+  Future<void> deleteMyUser(MyUser myUser) async {
+    final ref = firestore.doc('user/${currentUser.uid}/myUsers/${myUser.id}');
+
+    // se o usuario tem uma imagem, eu exclui-a
+    if (myUser.image != null) {
+      await storage.refFromURL(myUser.image!).delete();
+    }
+    // entao, excluo o usuario
+    await ref.delete();
+  }
 }

@@ -31,4 +31,5 @@ Future<void> injectDependencies() async {
   //Singleton =Significa que vai criar só 1vez durante todo ciclo de vida da aplicacao
   //Lazy = Significa que vai inicializar só quando formos utilizar
   getIt.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl());
+  getIt.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl());
 }
