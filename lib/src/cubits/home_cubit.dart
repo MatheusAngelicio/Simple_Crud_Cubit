@@ -19,8 +19,15 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   // quando recebemos uma lista de usuarios vamos emitir um estado novo
+  // coloco que loading é falso, e adiciono a lista de usuarios
   void myUserListen(Iterable<MyUser> myUsers) async {
-    emit(HomeState(isLoading: false));
+    emit(HomeState(isLoading: false, myUsers: myUsers));
+  }
+
+  @override
+  Future<void> close() {
+    _myUsersSubscription?.cancel();
+    return super.close();
   }
 }
 
