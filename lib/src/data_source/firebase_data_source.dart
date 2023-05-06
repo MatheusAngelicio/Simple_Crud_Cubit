@@ -15,6 +15,10 @@ class FirebaseDataSource {
   FirebaseFirestore get firestore => FirebaseFirestore.instance;
   FirebaseStorage get storage => FirebaseStorage.instance;
 
+  String newId() {
+    return firestore.collection('tmp').doc().id;
+  }
+
   Stream<Iterable<MyUser>> getMyUsers() {
     return firestore
         .collection('user/${currentUser.uid}/myUsers')

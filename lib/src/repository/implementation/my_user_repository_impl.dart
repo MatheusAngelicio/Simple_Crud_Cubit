@@ -23,4 +23,9 @@ class MyUserRepositoryImpl extends MyUserRepository {
   Future<void> deleteMyUser(MyUser myUser) {
     return _fDataSource.deleteMyUser(myUser);
   }
+
+  @override
+  String newId() {
+    return _fDataSource.newId();
+  }
 }

@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state == AuthState.signedOut) {
+          // quando stado for signedOut eu vou pra tela de intro
           _navigatorKey.currentState
               ?.pushNamedAndRemoveUntil(Routes.intro, (r) => false);
         } else if (state == AuthState.signedIn) {

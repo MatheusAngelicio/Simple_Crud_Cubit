@@ -7,6 +7,7 @@ class Routes {
   static const splash = '/';
   static const intro = '/intro';
   static const home = '/home';
+  static const editUser = '/editUser';
 
   static Route routes(RouteSettings settings) {
     MaterialPageRoute buildRoute(Widget widget) {
@@ -20,6 +21,10 @@ class Routes {
         return buildRoute(const IntroScreen());
       case home:
         return buildRoute(const HomeScreen());
+      case editUser:
+        return buildRoute(Container(
+          color: Colors.green,
+        ));
       default:
         throw Exception('Route does not exists');
     }

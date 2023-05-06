@@ -14,6 +14,9 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> init() async {
     _authSubscription =
+        // aqui adiciono um listener, que é um stream que notifica quando há mudanças no estado
+        // na linha 9 de auth_repository_impl estou pegando o uid do usuario logado
+        // e na funcao _authStateChanged eu pego essa mudança e vejo se tem id ou nao
         _authRepository.onAuthStateChanged.listen(_authStateChanged);
   }
 
