@@ -21,6 +21,11 @@ class EditMyUserCubit extends Cubit<EditMyUserState> {
     emit(state.copyWith(pickedImage: imageFile));
   }
 
+  // Eu emito isLoading true antes de fazer a request,
+  // depois eu nao emito isLoading false, porque eu vou voltar uma tela
+  // entao fica assim, eu mostro o loading enquanto salvo os dados
+  // depois emito isDone pra voltar uma tela
+  // com isso nao preciso emitir isLoading false
   Future<void> saveMyUser(
     String name,
     String lastName,
