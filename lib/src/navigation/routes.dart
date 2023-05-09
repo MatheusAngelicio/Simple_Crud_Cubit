@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simple_firebase_crud_cubit/src/ui/home_screen.dart';
 import 'package:simple_firebase_crud_cubit/src/ui/intro_screen.dart';
 import 'package:simple_firebase_crud_cubit/src/ui/splash_screen.dart';
+import '../ui/edit_my_user_screen.dart';
 
 class Routes {
   static const splash = '/';
@@ -22,9 +23,7 @@ class Routes {
       case home:
         return buildRoute(const HomeScreen());
       case editUser:
-        return buildRoute(Container(
-          color: Colors.green,
-        ));
+        return buildRoute(const EditMyUserScreen());
       default:
         throw Exception('Route does not exists');
     }

@@ -49,11 +49,13 @@ class HomeScreen extends StatelessWidget {
                       Navigator.pushNamed(context, Routes.editUser,
                           arguments: myUser);
                     },
-                    leading: SizedBox(
-                      height: 45,
-                      width: 45,
-                      child: CustomImage(
-                        imageUrl: myUser.image,
+                    leading: ClipOval(
+                      child: SizedBox(
+                        height: 45,
+                        width: 45,
+                        child: CustomImage(
+                          imageUrl: myUser.image,
+                        ),
                       ),
                     ),
                     title: Text('${myUser.name} ${myUser.lastName}'),
