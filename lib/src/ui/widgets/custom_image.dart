@@ -9,12 +9,11 @@ class CustomImage extends StatelessWidget {
   final BoxFit boxFit;
 
   const CustomImage({
-    super.key,
+    Key? key,
     this.imageFile,
     this.imageUrl,
-    // por padrao é cover
     this.boxFit = BoxFit.cover,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,21 +22,15 @@ class CustomImage extends StatelessWidget {
         imageFile!,
         fit: boxFit,
       );
-    }
-    if (imageUrl?.isNotEmpty == true) {
+    } else if (imageUrl?.isNotEmpty == true) {
       return CachedNetworkImage(
         imageUrl: imageUrl!,
-        // se esta carregando a imagem mostramos um progress
         progressIndicatorBuilder: (_, __, progress) =>
-            CircularProgressIndicator(
-          value: progress.progress,
-        ),
+            CircularProgressIndicator(value: progress.progress),
         errorWidget: (_, __, ___) => const Icon(Icons.error),
         fit: boxFit,
       );
     }
-    return Container(
-      color: Colors.grey,
-    );
+    return Container(color: Colors.grey);
   }
 }
