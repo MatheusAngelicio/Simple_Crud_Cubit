@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 //vamos obter o usuario que se encontra na posicao index
                 final myUser = state.myUsers.elementAt(index);
-                // depois criamos um card
+                // depois criamos um card para cada usuario
                 return Card(
                   child: ListTile(
                     onTap: () {
